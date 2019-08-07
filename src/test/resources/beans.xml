@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="hello" class="com.atguigu.spring.bean.HelloWorld">
+	</bean>
+	<bean id="p1" class="com.atguigu.spring.bean.Person">
+		<property name="name" value="Tom" />
+		<property name="gender" value="male" />
+		<property name="age" value="18" />
+		<property name="phone">
+			<bean id="phone1" class="com.atguigu.spring.bean.Phone">
+				<property name="brand" value="苹果"></property>
+				<property name="price" value="8888"></property>
+			</bean>
+		</property>
+	</bean>
+	<bean id="phone2" class="com.atguigu.spring.bean.Phone">
+		<property name="brand" value="小米"></property>
+		<property name="phoneNum" ><null/></property>
+		<property name="price" >
+			<value>1999</value>
+		</property>
+	</bean>
+	
+	<bean id="p2" class="com.atguigu.spring.bean.Person">
+		<property name="name" value="Lily" />
+		<property name="gender" value="female" />
+		<property name="age" value="19" />
+		<property name="phone" ref="phone2"/>
+	</bean>
+	
+
+</beans>
